@@ -1,0 +1,25 @@
+.container-input {
+  display: flex;
+  flex-direction: column;
+  max-width: 30%;
+  justify-content: center;
+  margin: auto;
+  height: 100vh;
+  margin-top: 150px;
+}
+
+.container-input input {
+  margin-bottom: 10px;
+  height: 40px;
+  border: none;
+  border-bottom: 1px solid #3cba92;
+  background-color: transparent;
+  outline: none;
+  font-size: 16px;
+  opacity: 0.8;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-register {
+  margin-top: 30px;
+}
