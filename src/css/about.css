@@ -1,4 +1,25 @@
 .container-sobre {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.container-sobre img {
+  margin-top: 70px;
+}
+
+.container-sobre h2 {
+  margin-top: 70px;
+}
+
+.list-calculo {
+  margin-top: 30px;
+}
+
+.about-fess {
+  max-width: 30%;
+}
+
+.text-formula {
+  font-weight: bold;
 }

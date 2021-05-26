@@ -16,15 +16,6 @@
 }
 
 .container-logo h2 {
-  font-family: 'Poppins', sans-serif;
   font-weight: 300;
 }
 
-.container-logo a {
-  text-decoration: none;
-  color: #333333;
-  font-family: 'Poppins', sans-serif;
-  font-weight: bold;
-  color: #333333;
-  font-size: 16px;
-}

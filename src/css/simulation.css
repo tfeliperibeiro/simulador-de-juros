@@ -4,10 +4,13 @@
   max-width: 30%;
   justify-content: center;
   margin: auto;
-  height: 100vh;
-  margin-top: 150px;
+  margin-top: 80px;
 }
 
+.container-simulation h2 {
+  text-align: center;
+  margin-top: 70px;
+}
 .container-input input {
   margin-bottom: 10px;
   height: 40px;
@@ -17,7 +20,6 @@
   outline: none;
   font-size: 16px;
   opacity: 0.8;
-  font-family: 'Poppins', sans-serif;
 }
 
 .btn-register {

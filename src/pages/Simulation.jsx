@@ -16,7 +16,8 @@ function Simulation() {
   const handleMeses = ({ target }) => setMeses(target.value);
 
   return (
-    <>
+    <main className="container-simulation">
+      <h2>Digite os dados para fazermos a simulação.</h2>
       <form className="container-input">
         <input
           type="text"
@@ -52,7 +53,7 @@ function Simulation() {
           Calcular
         </button>
       </form>
-    </>
+    </main>
   );
 }
 
