@@ -4,6 +4,7 @@ import Home from './pages/Home';
 
 import Header from './components/Header';
 import Simulation from './pages/Simulation';
+import About from './pages/About';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/simulation" component={Simulation} />
+          <Route exact path="/about" component={About} />
         </Switch>
       </BrowserRouter>
     </>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import Icon from '../assets/4136942-removebg-preview.png';
+import Icon from '../assets/home.png';
 
 import '../css/home.css';
 
@@ -15,7 +15,6 @@ function Home() {
             Fazer simulação
           </Link>
         </h1>
-        <div className="container-icon" />
         <img className="img" src={Icon} alt="Icone tela principal" />
       </section>
     </div>

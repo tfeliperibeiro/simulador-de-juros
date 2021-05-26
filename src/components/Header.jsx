@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Link } from 'react-router-dom';
-import Logo from '../assets/financiamento-colaborativo.svg';
+import Logo from '../assets/logo.png';
 import '../css/header.css';
 
 function Header() {
@@ -11,7 +11,7 @@ function Header() {
         <Link to="/">
           <img src={Logo} alt="Logo do sistema" />
         </Link>
-        <Link to="/about">Sobre</Link>
+        <Link to="/about">Como funciona?</Link>
       </header>
     </>
   );

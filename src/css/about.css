@@ -1,0 +1,4 @@
+.container-sobre {
+  display: flex;
+  justify-content: space-around;
+}
