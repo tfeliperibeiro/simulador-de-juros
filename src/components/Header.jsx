@@ -11,7 +11,9 @@ function Header() {
         <Link to="/">
           <img src={Logo} alt="Logo do sistema" />
         </Link>
-        <Link to="/about">Como funciona?</Link>
+        <div className="nav-links">
+          <Link to="/about">Como funciona?</Link>
+        </div>
       </header>
     </>
   );

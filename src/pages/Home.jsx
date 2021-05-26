@@ -11,9 +11,10 @@ function Home() {
       <section className="container-main">
         <h1 className="text-initial">
           O melhor sistema de simulação de financiamento!
-          <Link className="btn" to="/simulation">
-            Fazer simulação
+          <Link className="btn" to="/start">
+            Iniciar
           </Link>
+          <p className="text-footer">Rápido e Fácil</p>
         </h1>
         <img className="img" src={Icon} alt="Icone tela principal" />
       </section>

@@ -3,13 +3,17 @@ body {
   padding: 0;
   box-sizing: border-box;
   color: #333333;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 }
 
 a {
   text-decoration: none;
-  color: #333333;
-  font-family: 'Poppins', sans-serif;
+  color: #044d29;
+  font-family: "Poppins", sans-serif;
   font-weight: bold;
+}
+
+li {
+  list-style: none;
 }
