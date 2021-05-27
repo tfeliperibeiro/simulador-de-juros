@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 import { Link } from 'react-router-dom';
 
+// import firebase from 'firebase';
+
 import '../css/start.css';
 
 function ValueRegister() {
@@ -22,28 +24,28 @@ function ValueRegister() {
       <form className="container-input">
         <input
           type="number"
-          placeholder="Entrada"
+          placeholder="Quanto vai ser sua entrada?"
           value={entrance}
           onChange={handleEntrance}
           required
         />
         <input
           type="number"
-          placeholder="Juros %"
+          placeholder="Qual a % de Juros?"
           value={fees}
           onChange={handleFees}
           required
         />
         <input
           type="number"
-          placeholder="Parcela"
+          placeholder="Qual o valor da parcela?"
           value={plots}
           onChange={handlePlots}
           required
         />
         <input
           type="number"
-          placeholder="Meses"
+          placeholder="Quantos meses será o financiamento?"
           value={years}
           onChange={handleYears}
           required
