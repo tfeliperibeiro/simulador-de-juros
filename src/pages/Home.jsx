@@ -11,7 +11,7 @@ function Home() {
       <section className="container-main">
         <h1 className="text-initial">
           A melhor calculadora de Juros compostos!
-          <Link className="btn" to="/start">
+          <Link className="btn" to="/simulation">
             Iniciar
           </Link>
           <p className="text-footer">Rápido e Fácil</p>

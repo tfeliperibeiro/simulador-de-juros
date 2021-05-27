@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
-import '../css/start.css';
+import { Bar } from 'react-chartjs-2';
+import '../css/simulation.css';
 
 function ValueRegister() {
   const [entrance, setEntrance] = useState('');
@@ -13,8 +14,8 @@ function ValueRegister() {
   const handleYears = ({ target }) => setYears(target.value);
 
   const handleResult = () => {
-    const totalJurosCompostos = entrance * ((1 + fees / 100)) ** years;
-    setResult(totalJurosCompostos.toFixed(2));
+    const finalAmount = entrance * (1 + fees / 100) ** years;
+    setResult(finalAmount.toFixed(2));
   };
 
   return (
@@ -43,13 +44,30 @@ function ValueRegister() {
           onChange={handleYears}
         />
         <div className="container-btn">
-          <button className="btn btn-register" type="button" onClick={handleResult}>
+          <button
+            className="btn btn-register"
+            type="button"
+            onClick={handleResult}
+          >
             Calcular
           </button>
         </div>
       </form>
-      <div>
-        <h1 className="result">{`Montante total: ${result}`}</h1>
+      <div className="result-chart">
+        <h4 className="result">{`Montante final: R$ ${result}`}</h4>
+        <div>
+          <Bar
+            data={{
+              labels: ['Valor inicial', 'Juros', 'Período', 'Montante Final'],
+              datasets: [{
+                label: 'Resultado',
+                data: [entrance, fees, years, result],
+                backgroundColor: ['#0ba360'],
+              }],
+            }}
+            options={{ keepAspectRatio: false }}
+          />
+        </div>
       </div>
     </main>
   );
