@@ -10,13 +10,15 @@ function Simulation() {
       .firestore()
       .collection('finance')
       .get()
-      .then((res) => res.forEach((value) => setDb(value.data())))
+      .then((res) => res.forEach((value) => setDb(() => (value.data()))))
       .catch((error) => error);
   };
 
   useEffect(() => {
     handleGetDb();
   }, []);
+
+  console.log(db);
 
   return (
     <>

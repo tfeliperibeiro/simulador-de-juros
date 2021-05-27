@@ -21,10 +21,10 @@ function ValueRegister() {
       .firestore()
       .collection('finance')
       .add({
-        entrada: entrance,
-        juros: fees,
-        parcelas: plots,
-        meses: years,
+        entrada: Number(entrance),
+        juros: Number(fees),
+        parcelas: Number(plots),
+        meses: Number(years),
       })
       .then(() => {
         setEntrance('');
