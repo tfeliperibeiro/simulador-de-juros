@@ -62,4 +62,24 @@
 
 .result {
   text-align: center;
+  margin-top: 50px;
+}
+
+@media(max-width: 640px){
+  .container-simulation {
+    max-width: 100%;
+  }
+
+  .container-simulation h2 {
+    font-size: 20px;
+  }
+
+  .container-simulation h3 {
+    font-size: 16px;
+  }
+
+  .container-input  {
+    max-width: 90%;
+  }
+
 }

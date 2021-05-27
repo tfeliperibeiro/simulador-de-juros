@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { Bar } from 'react-chartjs-2';
+import Footer from '../components/Footer';
 import '../css/simulation.css';
 
 function ValueRegister() {
@@ -19,57 +20,60 @@ function ValueRegister() {
   };
 
   return (
-    <main className="container-simulation">
-      <h2>Que bom te ver por aqui &#128512; </h2>
-      <h3>Para começar, insira os valores para a simulação!</h3>
-      <form className="container-input">
-        <input
-          type="number"
-          placeholder="Qual será o valor inicial?"
-          value={entrance}
-          onChange={handleEntrance}
-        />
-        <input
-          type="number"
-          placeholder="Qual a taxa de Juros?"
-          value={fees}
-          onChange={handleFees}
-          min="0"
-          step="0.1"
-        />
-        <input
-          type="number"
-          placeholder="Período em meses?"
-          value={years}
-          onChange={handleYears}
-        />
-        <div className="container-btn">
-          <button
-            className="btn btn-register"
-            type="button"
-            onClick={handleResult}
-          >
-            Calcular
-          </button>
-        </div>
-      </form>
-      <div className="result-chart">
-        <h4 className="result">{`Montante final: R$ ${result}`}</h4>
-        <div>
-          <Bar
-            data={{
-              labels: ['Valor inicial', 'Juros', 'Período', 'Montante Final'],
-              datasets: [{
-                label: 'Resultado',
-                data: [entrance, fees, years, result],
-                backgroundColor: ['#0ba360'],
-              }],
-            }}
-            options={{ keepAspectRatio: false }}
+    <>
+      <main className="container-simulation">
+        <h2>Que bom te ver por aqui &#128512; </h2>
+        <h3>Para começar, insira os valores para a simulação!</h3>
+        <form className="container-input">
+          <input
+            type="number"
+            placeholder="Qual será o valor inicial?"
+            value={entrance}
+            onChange={handleEntrance}
           />
+          <input
+            type="number"
+            placeholder="Qual a taxa de Juros?"
+            value={fees}
+            onChange={handleFees}
+            min="0"
+            step="0.1"
+          />
+          <input
+            type="number"
+            placeholder="Período em meses?"
+            value={years}
+            onChange={handleYears}
+          />
+          <div className="container-btn">
+            <button
+              className="btn btn-register"
+              type="button"
+              onClick={handleResult}
+            >
+              Calcular
+            </button>
+          </div>
+        </form>
+        <div className="result-chart">
+          <h4 className="result">{`Montante final: R$ ${result}`}</h4>
+          <div>
+            <Bar
+              data={{
+                labels: ['Valor inicial', 'Juros', 'Período', 'Montante Final'],
+                datasets: [{
+                  label: 'Resultado',
+                  data: [entrance, fees, years, result],
+                  backgroundColor: ['#0ba360'],
+                }],
+              }}
+              options={{ keepAspectRatio: false }}
+            />
+          </div>
         </div>
-      </div>
-    </main>
+        <Footer />
+      </main>
+    </>
   );
 }
 
