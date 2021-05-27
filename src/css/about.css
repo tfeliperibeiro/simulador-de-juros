@@ -25,7 +25,12 @@
 }
 
 @media (max-width: 640px) {
-  .container-sobre {
-    max-width: 100%;
+  .about-fess {
+    max-width: 80%;
+    text-align: center;
+  }
+
+  .container-sobre img {
+    width: 100%;
   }
 }
