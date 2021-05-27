@@ -65,7 +65,7 @@
   margin-top: 50px;
 }
 
-@media(max-width: 640px){
+@media (max-width: 640px) {
   .container-simulation {
     max-width: 100%;
   }
@@ -78,8 +78,7 @@
     font-size: 16px;
   }
 
-  .container-input  {
+  .container-input {
     max-width: 90%;
   }
-
 }
