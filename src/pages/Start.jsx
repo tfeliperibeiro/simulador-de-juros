@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
 import { Link } from 'react-router-dom';
-
-// import firebase from 'firebase';
+import firebase from '../connection/firebase';
 
 import '../css/start.css';
 
@@ -16,6 +15,25 @@ function ValueRegister() {
   const handleFees = ({ target }) => setFees(target.value);
   const handlePlots = ({ target }) => setPlots(target.value);
   const handleYears = ({ target }) => setYears(target.value);
+
+  const handleBD = () => {
+    firebase
+      .firestore()
+      .collection('finance')
+      .add({
+        entrada: entrance,
+        juros: fees,
+        parcelas: plots,
+        meses: years,
+      })
+      .then(() => {
+        setEntrance('');
+        setFees('');
+        setPlots('');
+        setYears('');
+      })
+      .catch((error) => error);
+  };
 
   return (
     <main className="container-simulation">
@@ -35,6 +53,8 @@ function ValueRegister() {
           value={fees}
           onChange={handleFees}
           required
+          min="0"
+          step="0.1"
         />
         <input
           type="number"
@@ -51,7 +71,7 @@ function ValueRegister() {
           required
         />
         <div className="container-btn">
-          <button className="btn btn-register" type="submit">
+          <button className="btn btn-register" type="button" onClick={handleBD}>
             Cadastrar valores
           </button>
           <Link className="btn-register btn-simulation" to="simulation/">
