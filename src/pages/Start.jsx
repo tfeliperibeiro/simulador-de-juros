@@ -1,84 +1,56 @@
 import React, { useState } from 'react';
 
-import { Link } from 'react-router-dom';
-import firebase from '../connection/firebase';
-
 import '../css/start.css';
 
 function ValueRegister() {
   const [entrance, setEntrance] = useState('');
   const [fees, setFees] = useState('');
-  const [plots, setPlots] = useState('');
   const [years, setYears] = useState('');
+  const [result, setResult] = useState(0);
 
   const handleEntrance = ({ target }) => setEntrance(target.value);
   const handleFees = ({ target }) => setFees(target.value);
-  const handlePlots = ({ target }) => setPlots(target.value);
   const handleYears = ({ target }) => setYears(target.value);
 
-  const handleBD = () => {
-    firebase
-      .firestore()
-      .collection('finance')
-      .add({
-        entrada: Number(entrance),
-        juros: Number(fees),
-        parcelas: Number(plots),
-        meses: Number(years),
-      })
-      .then(() => {
-        setEntrance('');
-        setFees('');
-        setPlots('');
-        setYears('');
-      })
-      .catch((error) => error);
+  const handleResult = () => {
+    const totalJurosCompostos = entrance * ((1 + fees / 100)) ** years;
+    setResult(totalJurosCompostos.toFixed(2));
   };
 
   return (
     <main className="container-simulation">
       <h2>Que bom te ver por aqui &#128512; </h2>
-      <h3>Para começar, cadastre os valores para simular o financiamento!</h3>
+      <h3>Para começar, insira os valores para a simulação!</h3>
       <form className="container-input">
         <input
           type="number"
-          placeholder="Quanto vai ser sua entrada?"
+          placeholder="Qual será o valor inicial?"
           value={entrance}
           onChange={handleEntrance}
-          required
         />
         <input
           type="number"
-          placeholder="Qual a % de Juros?"
+          placeholder="Qual a taxa de Juros?"
           value={fees}
           onChange={handleFees}
-          required
           min="0"
           step="0.1"
         />
         <input
           type="number"
-          placeholder="Qual o valor da parcela?"
-          value={plots}
-          onChange={handlePlots}
-          required
-        />
-        <input
-          type="number"
-          placeholder="Quantos meses será o financiamento?"
+          placeholder="Período em meses?"
           value={years}
           onChange={handleYears}
-          required
         />
         <div className="container-btn">
-          <button className="btn btn-register" type="button" onClick={handleBD}>
-            Cadastrar valores
+          <button className="btn btn-register" type="button" onClick={handleResult}>
+            Calcular
           </button>
-          <Link className="btn-register btn-simulation" to="simulation/">
-            Ver simulações
-          </Link>
         </div>
       </form>
+      <div>
+        <h1 className="result">{`Montante total: ${result}`}</h1>
+      </div>
     </main>
   );
 }

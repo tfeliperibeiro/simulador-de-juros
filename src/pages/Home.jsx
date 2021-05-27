@@ -10,7 +10,7 @@ function Home() {
     <div>
       <section className="container-main">
         <h1 className="text-initial">
-          O melhor sistema de simulação de financiamento!
+          A melhor calculadora de Juros compostos!
           <Link className="btn" to="/start">
             Iniciar
           </Link>

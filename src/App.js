@@ -5,7 +5,6 @@ import Home from './pages/Home';
 import Header from './components/Header';
 import Start from './pages/Start';
 import About from './pages/About';
-import Simulation from './pages/Simulation';
 
 function App() {
   return (
@@ -17,7 +16,6 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/start" component={Start} />
           <Route exact path="/about" component={About} />
-          <Route exact path="/simulation" component={Simulation} />
         </Switch>
       </BrowserRouter>
     </>
