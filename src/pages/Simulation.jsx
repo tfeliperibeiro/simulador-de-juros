@@ -1,26 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import firebase from '../connection/firebase';
 
-class Simulation extends React.Component {
-  componentDidMount() {
+function Simulation() {
+  const [db, setDb] = useState({});
+
+  const handleGetDb = () => {
     firebase
       .firestore()
       .collection('finance')
       .get()
-      .then((res) => {
-        res.forEach((value) => {
-          console.log(value.data());
-        });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
+      .then((res) => res.forEach((value) => setDb(value.data())))
+      .catch((error) => error);
+  };
 
-  render() {
-    return <h1>Ola</h1>;
-  }
+  useEffect(() => {
+    handleGetDb();
+  }, []);
+
+  return (
+    <>
+      <h1>{db.entrada}</h1>
+    </>
+  );
 }
 
 export default Simulation;
