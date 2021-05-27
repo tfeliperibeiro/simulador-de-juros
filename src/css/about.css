@@ -23,3 +23,9 @@
 .text-formula {
   font-weight: bold;
 }
+
+@media (max-width: 640px) {
+  .container-sobre {
+    max-width: 100%;
+  }
+}
