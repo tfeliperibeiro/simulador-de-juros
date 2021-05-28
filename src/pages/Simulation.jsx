@@ -6,17 +6,22 @@ import '../css/simulation.css';
 
 function ValueRegister() {
   const [entrance, setEntrance] = useState('');
+  const [plots, setPlots] = useState('');
   const [fees, setFees] = useState('');
   const [years, setYears] = useState('');
   const [result, setResult] = useState(0);
 
   const handleEntrance = ({ target }) => setEntrance(target.value);
+  const handlePlots = ({ target }) => setPlots(target.value);
   const handleFees = ({ target }) => setFees(target.value);
   const handleYears = ({ target }) => setYears(target.value);
 
   const handleResult = () => {
-    const finalAmount = entrance * (1 + fees / 100) ** years;
-    setResult(finalAmount.toFixed(2));
+    const fessTotal = fees / 100;
+    const finalAmount = plots * [(1 + fessTotal) ** years - 1];
+    const futureValue = finalAmount / fessTotal;
+    const valueFinal = Number(entrance) + futureValue;
+    setResult(valueFinal.toFixed(2));
   };
 
   return (
@@ -27,9 +32,15 @@ function ValueRegister() {
         <form className="container-input">
           <input
             type="number"
-            placeholder="Qual será o valor inicial?"
+            placeholder="Qual será a sua entrada?"
             value={entrance}
             onChange={handleEntrance}
+          />
+          <input
+            type="number"
+            placeholder="Qual será o valor da parcela?"
+            value={plots}
+            onChange={handlePlots}
           />
           <input
             type="number"
@@ -56,14 +67,14 @@ function ValueRegister() {
           </div>
         </form>
         <div className="result-chart">
-          <h4 className="result">{`Montante final: R$ ${result}`}</h4>
+          <h4 className="result">{`Valor final do imóvel: R$ ${result}`}</h4>
           <div>
             <Bar
               data={{
-                labels: ['Valor inicial', 'Juros', 'Período', 'Montante Final'],
+                labels: ['Entrada', 'Parcelas', 'Juros', 'Período', 'Valor Final'],
                 datasets: [{
                   label: 'Resultado',
-                  data: [entrance, fees, years, result],
+                  data: [entrance, plots, fees, years, result],
                   backgroundColor: ['#0ba360'],
                 }],
               }}
