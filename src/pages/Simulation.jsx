@@ -20,7 +20,7 @@ function ValueRegister() {
     const fessTotal = fees / 100;
     const finalAmount = plots * [(1 + fessTotal) ** years - 1];
     const futureValue = finalAmount / fessTotal;
-    const valueFinal = Number(entrance) + futureValue;
+    const valueFinal = Number(entrance) + Number(futureValue);
     setResult(valueFinal.toFixed(2));
   };
 
@@ -35,12 +35,14 @@ function ValueRegister() {
             placeholder="Qual será a sua entrada?"
             value={entrance}
             onChange={handleEntrance}
+            required
           />
           <input
             type="number"
             placeholder="Qual será o valor da parcela?"
             value={plots}
             onChange={handlePlots}
+            required
           />
           <input
             type="number"
@@ -49,12 +51,14 @@ function ValueRegister() {
             onChange={handleFees}
             min="0"
             step="0.1"
+            required
           />
           <input
             type="number"
             placeholder="Período em meses?"
             value={years}
             onChange={handleYears}
+            required
           />
           <div className="container-btn">
             <button
