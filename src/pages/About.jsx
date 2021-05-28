@@ -9,11 +9,11 @@ function About() {
       <div className="about-fess">
         <h2>Simulação de Juros compostos com aportes.</h2>
         <p>
-          Fórmula dos Juros Compostos com Aporte Mensal A fórmula de juros
-          compostos com aporte mensal é um pouco mais complicada. Nesse caso, o
-          uso de uma ferramenta (como calculadora financeira, Excel ou mesmo uma
-          calculadora de juros na internet) pode facilitar a sua vida. Veja qual
-          é a fórmula dos juros compostos com aporte mensal:
+          Com essa ferramenta você consegue literalmente visualizar o poder dos
+          juros compostos e simular diferentes cenários, com diferentes
+          rentabilidades mensais e diferente valores de aportes recorrentes.
+          Você poderá usar esta ferramenta para simular financimantos de
+          imóveis.
         </p>
         <p className="text-formula">
           Veja abaixo a fórmula para calcular os juros:
