@@ -52,6 +52,10 @@
   }
   .text-initial {
     font-size: 20px;
+    max-width: 100%;
+  }
+
+  .text-initial h1 {
     max-width: 80%;
   }
 
