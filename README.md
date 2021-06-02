@@ -22,6 +22,6 @@
 4. Para iniciar o projeto insira o comando `npm start`
 
 
-
+<img src="src/assets/Screenshot.png"/>
 
 <a href="https://simuladorjuroscompostos.netlify.app/">Link para ver a aplicação</a>
