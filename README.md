@@ -1,7 +1,7 @@
 
 <h1>Simulador de Juros Compostos com Aportes :bar_chart:</h1>
 
-<p>Projeto desenvolvido em React Js onde o resultado final era retornar um montante final
+<p>Projeto desenvolvido em React Js onde o resultado era retornar um montante final
   utilizando a fórmula de juros compostos com aportes, simulando como se fosse um financiamento
   de um imóvel.
   
