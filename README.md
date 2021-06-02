@@ -7,12 +7,21 @@
   
   Neste projeto foi utilizado as seguintes tecnologias:
   
-  - [x] React Js
-  - [x] React Router
-  - [x] Hooks do React 
-  - [X] CSS
+  * React Js
+  * React Router
+  * Hooks do React 
+  * CSS
    
 </p>
+
+<h2>Guia</h2>
+
+1. É necessário clonar o repositório com o seguinte comando `git clone git@github.com:tfeliperibeiro/simulador-de-juros.git`
+2. Entrar no diretório do projeto `cd simulador-de-juros`
+3. Instalar as dependências do projeto com `npm install`
+4. Para iniciar o projeto insira o comando `npm start`
+
+
 
 
 <a href="https://simuladorjuroscompostos.netlify.app/">Link para ver a aplicação</a>
